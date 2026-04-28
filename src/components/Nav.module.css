@@ -1,0 +1,232 @@
+.navigation {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(1.4rem, 3vw, 3rem);
+
+  padding: clamp(1rem, 2vw, 1.85rem) clamp(1.2rem, 4vw, 4.8rem);
+
+  color: rgba(243, 240, 234, 0.78);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 11, 14, 0.54) 0%,
+      rgba(7, 11, 14, 0.22) 58%,
+      rgba(7, 11, 14, 0) 100%
+    );
+
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+
+  animation: navReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.brand,
+.menu a {
+  pointer-events: auto;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(0.58rem, 0.9vw, 0.78rem);
+  width: fit-content;
+}
+
+.logo {
+  width: clamp(23px, 2.15vw, 34px);
+  height: clamp(23px, 2.15vw, 34px);
+  object-fit: contain;
+
+  opacity: 0.52;
+  filter:
+    drop-shadow(0 0 10px rgba(128, 161, 178, 0.1))
+    saturate(0.58)
+    brightness(0.9)
+    contrast(0.9);
+
+  transform: translateY(1px);
+
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand:hover .logo {
+  opacity: 0.68;
+  filter:
+    drop-shadow(0 0 14px rgba(128, 161, 178, 0.16))
+    saturate(0.72)
+    brightness(0.96)
+    contrast(0.94);
+
+  transform: translateY(1px) scale(1.025);
+}
+
+.brandText {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.72rem;
+}
+
+.brandJa {
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(0.78rem, 0.9vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: rgba(243, 240, 234, 0.82);
+  white-space: nowrap;
+}
+
+.brandEn {
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(0.66rem, 0.78vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: rgba(200, 210, 216, 0.5);
+  white-space: nowrap;
+}
+
+.menu {
+  justify-self: center;
+
+  display: flex;
+  align-items: center;
+  gap: clamp(1.4rem, 3vw, 3.4rem);
+}
+
+.menu a {
+  position: relative;
+
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(0.68rem, 0.78vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(243, 240, 234, 0.48);
+  text-transform: uppercase;
+
+  transition:
+    color 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.42rem;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(243, 240, 234, 0),
+      rgba(243, 240, 234, 0.46),
+      rgba(127, 160, 181, 0)
+    );
+
+  opacity: 0;
+  transform: scaleX(0.2);
+  transform-origin: center;
+
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu a:hover {
+  color: rgba(243, 240, 234, 0.84);
+}
+
+.menu a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.ageLabel {
+  justify-self: end;
+
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: clamp(0.58rem, 0.68vw, 0.72rem);
+  font-weight: 700;
+  letter-spacing: 0.23em;
+  color: rgba(243, 240, 234, 0.42);
+  white-space: nowrap;
+}
+
+@keyframes navReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .navigation {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .ageLabel {
+    font-size: 0.52rem;
+    letter-spacing: 0.16em;
+  }
+
+  .brandText {
+    gap: 0.56rem;
+  }
+
+  .brandEn {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .brandJa {
+    font-size: 0.78rem;
+  }
+
+  .ageLabel {
+    max-width: 8.5rem;
+    line-height: 1.5;
+    text-align: right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation {
+    animation: none;
+  }
+
+  .logo,
+  .menu a,
+  .menu a::after {
+    transition: none;
+  }
+}

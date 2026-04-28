@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /*
+    UMIKAJI Global Philosophy
+    黒くするな。澄ませろ。
+    青い夜気の中に、冷えた一滴が浮かぶ。
+  */
+
+  --color-sumi: #0b1117;
+  --color-yoru: #101a22;
+  --color-milk: #eef2f4;
+  --color-haze: #b8c1c8;
+  --color-sea: #7fa0b5;
+  --color-amber: #a88b68;
+
+  --color-night: #071016;
+  --color-deep-sea: #0e1b24;
+  --color-blue-black: #121e27;
+  --color-wet-ink: #16242e;
+  --color-cold-mist: #d8e6ee;
+  --color-moon: #f4f6f6;
+
+  color: var(--color-milk);
+  background: var(--color-sumi);
+
+  font-family:
+    "Inter",
+    "Noto Sans JP",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  background: var(--color-sumi);
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  margin: 0;
+
+  /*
+    横だけ止める。
+    縦は止めない。縦を止めるとHero下部が切れて詰まる。
+  */
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  color: var(--color-milk);
+
+  /*
+    黒ベタではなく、青い夜気を通す。
+    サイト全体の空気をここで決める。
+  */
+  background:
+    radial-gradient(
+      circle at 18% 10%,
+      rgba(127, 160, 181, 0.16) 0%,
+      rgba(127, 160, 181, 0.06) 28%,
+      rgba(11, 17, 23, 0) 56%
+    ),
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(216, 230, 238, 0.08) 0%,
+      rgba(127, 160, 181, 0.04) 30%,
+      rgba(11, 17, 23, 0) 58%
+    ),
+    linear-gradient(
+      180deg,
+      #0b1117 0%,
+      #101a22 42%,
+      #071016 100%
+    );
+
+  font-family:
+    "Inter",
+    "Noto Sans JP",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  isolation: isolate;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+
+  /*
+    ここが重要。
+    overflow: hidden; にすると縦方向も切れて、Hero下部が詰まる。
+  */
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+::selection {
+  color: var(--color-sumi);
+  background: rgba(238, 242, 244, 0.92);
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 1px solid rgba(216, 230, 238, 0.58);
+  outline-offset: 4px;
+}
+
+/* Chrome / Edge / Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-night);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(127, 160, 181, 0.32);
+  border: 3px solid var(--color-night);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(216, 230, 238, 0.42);
+}
+
+@supports not (overflow: clip) {
+  main {
+    overflow-x: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

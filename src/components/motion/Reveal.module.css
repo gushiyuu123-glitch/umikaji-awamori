@@ -1,0 +1,95 @@
+.reveal {
+  opacity: 0;
+  filter: blur(7px);
+  transform-origin: center;
+
+  transition:
+    opacity var(--reveal-duration, 1200ms) cubic-bezier(0.16, 1, 0.3, 1),
+    transform var(--reveal-duration, 1200ms) cubic-bezier(0.16, 1, 0.3, 1),
+    filter var(--reveal-duration, 1200ms) cubic-bezier(0.16, 1, 0.3, 1);
+
+  transition-delay: var(--reveal-delay, 0ms);
+
+  will-change: opacity, transform, filter;
+}
+
+/* 基本：下から静かに滲む */
+.up {
+  transform: translate3d(0, 16px, 0) scale(0.995);
+}
+
+/* UMIKAJI標準：かなり上品な出現 */
+.soft {
+  filter: blur(6px);
+  transform: translate3d(0, 10px, 0) scale(0.997);
+}
+
+/* 上から落とさず、夜気が降りる感じ */
+.down {
+  transform: translate3d(0, -14px, 0) scale(0.996);
+}
+
+/* 左右は動かしすぎない */
+.left {
+  transform: translate3d(-14px, 0, 0) scale(0.996);
+}
+
+.right {
+  transform: translate3d(14px, 0, 0) scale(0.996);
+}
+
+/* 文字・ステートメント向け */
+.fade {
+  filter: blur(4px);
+  transform: translate3d(0, 0, 0) scale(0.998);
+}
+
+/* 画像向け：少し奥から立ち上がる */
+.image {
+  filter: blur(10px) brightness(0.92);
+  transform: translate3d(0, 22px, 0) scale(1.015);
+}
+
+/* 霧・背景装飾向け：存在だけが増す */
+.mist {
+  filter: blur(16px);
+  transform: translate3d(0, 18px, 0) scale(1.04);
+}
+
+/* 深みのあるセクション見出し向け */
+.deep {
+  filter: blur(8px);
+  transform: translate3d(0, 18px, 0) scale(0.99);
+}
+
+/* ほぼ動かさず、余韻だけ出す */
+.still {
+  filter: blur(5px);
+  transform: translate3d(0, 4px, 0) scale(0.999);
+}
+
+/* 
+  最後に置く。
+  これで .fade / .soft / .image などに負けない。
+*/
+.reveal.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}

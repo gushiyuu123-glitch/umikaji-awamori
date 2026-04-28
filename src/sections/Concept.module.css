@@ -1,0 +1,356 @@
+.concept {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-milk);
+
+  background:
+    radial-gradient(
+      circle at 76% 12%,
+      rgba(127, 160, 181, 0.14) 0%,
+      rgba(127, 160, 181, 0.055) 30%,
+      rgba(7, 16, 22, 0) 58%
+    ),
+    radial-gradient(
+      circle at 18% 86%,
+      rgba(168, 139, 104, 0.07) 0%,
+      rgba(168, 139, 104, 0.025) 34%,
+      rgba(7, 16, 22, 0) 66%
+    ),
+    linear-gradient(
+      180deg,
+      var(--color-night) 0%,
+      var(--color-deep-sea) 48%,
+      var(--color-sumi) 100%
+    );
+}
+
+.concept::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(238, 242, 244, 0.026) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      180deg,
+      rgba(238, 242, 244, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 112px 112px;
+
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    black 20%,
+    black 66%,
+    transparent 100%
+  );
+
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.air {
+  position: absolute;
+  top: 12%;
+  right: 8%;
+  width: clamp(260px, 32vw, 560px);
+  height: clamp(260px, 32vw, 560px);
+  border-radius: 999px;
+
+  background: radial-gradient(
+    circle,
+    rgba(216, 230, 238, 0.08) 0%,
+    rgba(127, 160, 181, 0.045) 36%,
+    rgba(7, 16, 22, 0) 70%
+  );
+
+  filter: blur(46px);
+  opacity: 0.82;
+  pointer-events: none;
+
+  animation: conceptAir 12s ease-in-out infinite alternate;
+}
+
+.depth {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 42%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(7, 16, 22, 0) 0%,
+    rgba(7, 16, 22, 0.42) 100%
+  );
+
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding: clamp(7.5rem, 12vw, 12.5rem) clamp(1.5rem, 5vw, 6rem);
+}
+
+.kicker {
+  margin: 0 0 clamp(3.4rem, 6vw, 6.4rem);
+
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.36em;
+  color: rgba(184, 193, 200, 0.5);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.98fr) minmax(340px, 0.72fr);
+  gap: clamp(3.4rem, 8vw, 9.2rem);
+  align-items: start;
+}
+
+.headingBlock {
+  position: relative;
+}
+
+.headingBlock::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2.6rem;
+
+  width: min(18rem, 44vw);
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(238, 242, 244, 0.28),
+    rgba(127, 160, 181, 0.08),
+    rgba(127, 160, 181, 0)
+  );
+
+  opacity: 0.68;
+}
+
+.jaLabel {
+  margin: 0 0 1.7rem;
+
+  font-family: "Shippori Mincho B1", "Noto Serif JP", serif;
+  font-size: clamp(0.88rem, 1vw, 1.05rem);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  color: rgba(238, 242, 244, 0.5);
+}
+
+.title {
+  margin: 0;
+
+  font-family: "Shippori Mincho B1", "Noto Serif JP", serif;
+  font-size: clamp(2.85rem, 4.3vw, 5.9rem);
+  font-weight: 400;
+  line-height: 1.42;
+  letter-spacing: 0.12em;
+  color: rgba(238, 242, 244, 0.92);
+
+  text-rendering: geometricPrecision;
+}
+
+.title span {
+  display: block;
+}
+
+.textBlock {
+  width: min(100%, 520px);
+  padding-top: clamp(0.3rem, 0.9vw, 1rem);
+}
+
+.lead {
+  margin: 0;
+
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(1rem, 1.12vw, 1.16rem);
+  font-weight: 400;
+  line-height: 2.28;
+  letter-spacing: 0.075em;
+  color: rgba(238, 242, 244, 0.78);
+}
+
+.text {
+  margin: 1.9rem 0 0;
+
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+  font-size: clamp(0.86rem, 0.92vw, 0.95rem);
+  font-weight: 300;
+  line-height: 2.18;
+  letter-spacing: 0.055em;
+  color: rgba(238, 242, 244, 0.52);
+}
+
+.statement {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  margin-top: clamp(5.8rem, 10vw, 10.5rem);
+  padding-top: 1.35rem;
+
+  border-top: 1px solid rgba(238, 242, 244, 0.1);
+
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(1.15rem, 2.35vw, 3rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  color: rgba(238, 242, 244, 0.26);
+  text-transform: uppercase;
+}
+
+@keyframes conceptAir {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.58;
+  }
+
+  100% {
+    transform: translate3d(-18px, 16px, 0) scale(1.06);
+    opacity: 0.86;
+  }
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 6.8rem 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .headingBlock::after {
+    bottom: -2rem;
+  }
+
+  .title {
+    font-size: clamp(2.3rem, 9vw, 4rem);
+  }
+
+  .textBlock {
+    width: min(100%, 640px);
+    padding-top: 0;
+  }
+
+  .statement {
+    display: grid;
+    justify-content: start;
+    gap: 0.72rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .inner {
+    padding: 5.8rem 1.25rem;
+  }
+
+  .kicker {
+    margin-bottom: 3rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.26em;
+  }
+
+  .jaLabel {
+    margin-bottom: 1.2rem;
+    font-size: 0.86rem;
+    letter-spacing: 0.22em;
+  }
+
+  .title {
+    line-height: 1.44;
+    letter-spacing: 0.08em;
+  }
+
+  .lead {
+    font-size: 0.95rem;
+    line-height: 2.12;
+  }
+
+  .text {
+    font-size: 0.84rem;
+    line-height: 2;
+  }
+
+  .statement {
+    margin-top: 4.8rem;
+    font-size: 1.12rem;
+    letter-spacing: 0.13em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .air {
+    animation: none;
+  }
+}
+.waveBg {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 52%;
+
+  width: min(156vw, 2200px);
+  height: min(82vw, 980px);
+
+  transform: translate(-50%, -50%);
+  opacity: 0.42;
+
+  pointer-events: none;
+  overflow: visible;
+
+  filter:
+    blur(0.2px)
+    drop-shadow(0 0 32px rgba(127, 160, 181, 0.08));
+
+  mix-blend-mode: screen;
+
+  animation: waveBreath 14s ease-in-out infinite alternate;
+}
+
+.waveBg path {
+  fill: none;
+  stroke: url("#conceptWave");
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.72;
+}
+
+.waveBg path:nth-child(3) {
+  opacity: 0.42;
+  transform: translateY(-18px);
+}
+
+.waveBg path:nth-child(4) {
+  opacity: 0.34;
+  transform: translateY(24px);
+}
+
+@keyframes waveBreath {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.32;
+  }
+
+  100% {
+    transform: translate(-50%, -51.5%) scale(1.035);
+    opacity: 0.48;
+  }
+}

@@ -1,0 +1,528 @@
+.taste {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-milk);
+  background:
+    radial-gradient(
+      circle at 18% 14%,
+      rgba(127, 160, 181, 0.2) 0%,
+      rgba(127, 160, 181, 0.08) 32%,
+      rgba(10, 19, 25, 0) 64%
+    ),
+    radial-gradient(
+      circle at 82% 22%,
+      rgba(216, 230, 238, 0.13) 0%,
+      rgba(127, 160, 181, 0.055) 34%,
+      rgba(10, 19, 25, 0) 64%
+    ),
+    linear-gradient(
+      180deg,
+      #101a22 0%,
+      #12202a 46%,
+      #0b151d 100%
+    );
+}
+
+.taste::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(238, 242, 244, 0.022) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      180deg,
+      rgba(238, 242, 244, 0.014) 1px,
+      transparent 1px
+    );
+  background-size: 112px 112px;
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    black 18%,
+    black 76%,
+    transparent 100%
+  );
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.air {
+  position: absolute;
+  top: 6%;
+  left: -10%;
+  width: 38vw;
+  height: 38vw;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(216, 230, 238, 0.13) 0%,
+    rgba(127, 160, 181, 0.06) 38%,
+    rgba(127, 160, 181, 0) 72%
+  );
+  filter: blur(54px);
+  opacity: 0.82;
+  pointer-events: none;
+}
+
+.depth {
+  position: absolute;
+  right: -10%;
+  bottom: -18%;
+  width: 44vw;
+  height: 44vw;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(168, 139, 104, 0.09) 0%,
+    rgba(168, 139, 104, 0.034) 36%,
+    rgba(168, 139, 104, 0) 72%
+  );
+  filter: blur(60px);
+  opacity: 0.66;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding: clamp(7rem, 12vw, 12rem) clamp(1.5rem, 5vw, 6rem);
+}
+
+.kicker {
+  margin: 0 0 clamp(2.8rem, 5vw, 4.5rem);
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  color: rgba(184, 193, 200, 0.58);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.78fr);
+  gap: clamp(2.5rem, 7vw, 8rem);
+  align-items: end;
+  margin-bottom: clamp(5rem, 9vw, 8.5rem);
+}
+
+.headingBlock {
+  position: relative;
+}
+
+.jaLabel {
+  margin: 0 0 1.45rem;
+  font-family: "Shippori Mincho B1", "Noto Serif JP", serif;
+  font-size: clamp(0.92rem, 1.04vw, 1.05rem);
+  letter-spacing: 0.24em;
+  color: rgba(238, 242, 244, 0.56);
+}
+
+.title {
+  margin: 0;
+  font-family: "Shippori Mincho B1", "Noto Serif JP", serif;
+  font-size: clamp(2.7rem, 4.8vw, 5.6rem);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  color: rgba(238, 242, 244, 0.96);
+  text-rendering: geometricPrecision;
+}
+
+.title span {
+  display: block;
+}
+
+.intro {
+  max-width: 36rem;
+  margin: 0;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(0.96rem, 1.04vw, 1.1rem);
+  font-weight: 400;
+  line-height: 2.15;
+  letter-spacing: 0.075em;
+  color: rgba(238, 242, 244, 0.72);
+}
+
+.notes {
+  display: grid;
+  gap: clamp(5.5rem, 8vw, 8.5rem);
+}
+
+.note {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(7rem, 10rem) minmax(0, 1fr);
+  gap: clamp(1.6rem, 3vw, 3.8rem);
+  align-items: center;
+
+  width: min(100%, 82rem);
+  padding: 0;
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  isolation: isolate;
+}
+
+.note::before {
+  content: "";
+  position: absolute;
+  top: clamp(-2.8rem, -3vw, -2rem);
+  left: 0;
+  width: min(100%, 58rem);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(216, 230, 238, 0),
+    rgba(216, 230, 238, 0.2),
+    rgba(127, 160, 181, 0)
+  );
+  opacity: 0.74;
+  pointer-events: none;
+}
+
+.note::after {
+  content: "";
+  position: absolute;
+  inset: -12% -8%;
+  z-index: -1;
+  background: radial-gradient(
+    circle at 58% 48%,
+    rgba(127, 160, 181, 0.09) 0%,
+    rgba(127, 160, 181, 0.036) 34%,
+    rgba(127, 160, 181, 0) 68%
+  );
+  filter: blur(34px);
+  opacity: 0.62;
+  pointer-events: none;
+}
+
+.note1 {
+  margin-left: 0;
+}
+
+.note2 {
+  margin-left: clamp(3rem, 10vw, 12rem);
+}
+
+.note3 {
+  margin-left: clamp(1rem, 4vw, 4rem);
+}
+
+.noteMeta {
+  display: grid;
+  gap: 1.15rem;
+  align-content: start;
+  align-self: start;
+  padding-top: 0.2rem;
+}
+
+.noteNumber {
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(2.1rem, 2.6vw, 3rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  color: rgba(216, 230, 238, 0.28);
+}
+
+.noteHeading {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.noteTitle {
+  margin: 0;
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(1rem, 1.15vw, 1.22rem);
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  color: rgba(216, 230, 238, 0.64);
+}
+
+.noteJa {
+  margin: 0;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(1.05rem, 1.18vw, 1.22rem);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.08em;
+  color: rgba(238, 242, 244, 0.9);
+}
+
+.noteBody {
+  display: grid;
+  grid-template-columns: minmax(260px, 34vw) minmax(0, 1fr);
+  gap: clamp(1.8rem, 4vw, 5rem);
+  align-items: center;
+}
+
+.note2 .noteBody {
+  grid-template-columns: minmax(0, 0.86fr) minmax(260px, 32vw);
+}
+
+.note2 .noteVisual {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.note2 .noteText {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.note3 .noteBody {
+  grid-template-columns: minmax(240px, 30vw) minmax(0, 0.9fr);
+}
+
+.noteVisual {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  opacity: 0.84;
+
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 10%,
+    black 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 10%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+.noteVisual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(238, 242, 244, 0.13) 0%,
+      rgba(238, 242, 244, 0.035) 36%,
+      rgba(238, 242, 244, 0) 70%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(8, 14, 19, 0) 0%,
+      rgba(8, 14, 19, 0.12) 100%
+    );
+  pointer-events: none;
+}
+
+.noteVisual::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(216, 230, 238, 0),
+    rgba(216, 230, 238, 0.28),
+    rgba(216, 230, 238, 0)
+  );
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.noteVisual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  filter: saturate(0.92) contrast(1.04) brightness(1);
+  transform: scale(1.025);
+}
+
+.note1 .noteVisual {
+  opacity: 0.9;
+}
+
+.note1 .noteVisual img {
+  filter: saturate(0.88) contrast(1.02) brightness(1.1);
+}
+
+.note2 .noteVisual {
+  opacity: 0.78;
+}
+
+.note2 .noteVisual img {
+  filter: saturate(0.84) contrast(1.08) brightness(0.9);
+}
+
+.note3 .noteVisual {
+  opacity: 0.78;
+}
+
+.note3 .noteVisual img {
+  filter: saturate(0.8) contrast(1.02) brightness(0.98);
+}
+
+.noteText {
+  max-width: 34rem;
+  margin: 0;
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+  font-size: clamp(0.88rem, 0.95vw, 0.96rem);
+  font-weight: 300;
+  line-height: 2.08;
+  letter-spacing: 0.055em;
+  color: rgba(238, 242, 244, 0.62);
+}
+
+@media (max-width: 1080px) {
+  .head {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .note,
+  .note1,
+  .note2,
+  .note3 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .noteBody,
+  .note2 .noteBody,
+  .note3 .noteBody {
+    grid-template-columns: minmax(240px, 320px) 1fr;
+  }
+
+  .note2 .noteVisual,
+  .note2 .noteText {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .note2 .noteText {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 6.5rem 1.5rem;
+  }
+
+  .title {
+    font-size: clamp(2.3rem, 9vw, 4rem);
+  }
+
+  .notes {
+    gap: 4.8rem;
+  }
+
+  .note {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .noteMeta {
+    grid-template-columns: auto 1fr;
+    gap: 1.2rem;
+    align-items: end;
+  }
+
+  .noteBody,
+  .note2 .noteBody,
+  .note3 .noteBody {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+
+  .noteVisual {
+    width: min(100%, 460px);
+    aspect-ratio: 16 / 10;
+  }
+
+  .noteText {
+    max-width: 38rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .inner {
+    padding: 5.5rem 1.25rem;
+  }
+
+  .kicker {
+    margin-bottom: 2.8rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.26em;
+  }
+
+  .head {
+    margin-bottom: 4.4rem;
+  }
+
+  .jaLabel {
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .title {
+    line-height: 1.42;
+    letter-spacing: 0.08em;
+  }
+
+  .intro {
+    font-size: 0.92rem;
+    line-height: 2.05;
+  }
+
+  .notes {
+    gap: 4.4rem;
+  }
+
+  .noteMeta {
+    align-items: start;
+  }
+
+  .noteNumber {
+    font-size: 2rem;
+  }
+
+  .noteTitle {
+    font-size: 0.95rem;
+  }
+
+  .noteJa {
+    font-size: 1rem;
+  }
+
+  .noteVisual {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .noteText {
+    font-size: 0.84rem;
+    line-height: 2;
+  }
+}

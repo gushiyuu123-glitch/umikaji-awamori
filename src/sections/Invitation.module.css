@@ -1,0 +1,253 @@
+.invitation {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(520px, 72svh, 760px);
+
+  display: flex;
+  align-items: center;
+
+  color: var(--color-milk);
+
+  background:
+    radial-gradient(
+      circle at 50% 18%,
+      rgba(216, 230, 238, 0.095) 0%,
+      rgba(127, 160, 181, 0.045) 30%,
+      rgba(7, 16, 22, 0) 62%
+    ),
+    radial-gradient(
+      circle at 82% 76%,
+      rgba(168, 139, 104, 0.075) 0%,
+      rgba(168, 139, 104, 0.028) 34%,
+      rgba(7, 16, 22, 0) 66%
+    ),
+    linear-gradient(
+      180deg,
+      #071016 0%,
+      #0b141b 44%,
+      #050b10 100%
+    );
+}
+
+.invitation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(238, 242, 244, 0.035) 0%,
+      rgba(238, 242, 244, 0) 24%,
+      rgba(238, 242, 244, 0) 72%,
+      rgba(238, 242, 244, 0.028) 100%
+    );
+
+  pointer-events: none;
+}
+
+.invitation::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: clamp(2.8rem, 6vw, 5.6rem);
+
+  width: min(64vw, 720px);
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(238, 242, 244, 0),
+    rgba(238, 242, 244, 0.22),
+    rgba(127, 160, 181, 0.18),
+    rgba(238, 242, 244, 0)
+  );
+
+  transform: translateX(-50%);
+  opacity: 0.62;
+  pointer-events: none;
+}
+
+.air {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 52%,
+      rgba(216, 230, 238, 0.08) 0%,
+      rgba(127, 160, 181, 0.035) 34%,
+      rgba(7, 16, 22, 0) 70%
+    );
+
+  filter: blur(28px);
+  opacity: 0.76;
+  pointer-events: none;
+}
+
+.wave {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: min(74vw, 920px);
+  height: min(74vw, 920px);
+
+  border-radius: 999px;
+
+  background:
+    repeating-radial-gradient(
+      circle,
+      rgba(238, 242, 244, 0.05) 0 1px,
+      rgba(238, 242, 244, 0) 1px 34px
+    );
+
+  mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.38) 38%,
+    rgba(0, 0, 0, 0) 72%
+  );
+
+  transform: translate(-50%, -50%);
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 980px);
+  margin-inline: auto;
+  padding:
+    clamp(7rem, 12vw, 11rem)
+    clamp(1.5rem, 6vw, 6rem);
+
+  text-align: center;
+}
+
+.kicker {
+  margin: 0 0 1.5rem;
+
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.36em;
+  color: rgba(216, 230, 238, 0.46);
+}
+
+.jaLabel {
+  margin: 0 0 clamp(1.8rem, 3vw, 2.7rem);
+
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(0.78rem, 0.9vw, 0.95rem);
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  color: rgba(238, 242, 244, 0.48);
+}
+
+.title {
+  margin: 0;
+
+  font-family: "Shippori Mincho B1", "Noto Serif JP", serif;
+  font-size: clamp(2.05rem, 4vw, 4.45rem);
+  font-weight: 400;
+  line-height: 1.48;
+  letter-spacing: 0.14em;
+  color: rgba(238, 242, 244, 0.86);
+
+  text-rendering: geometricPrecision;
+}
+
+.title span {
+  display: block;
+}
+
+.lead {
+  width: min(100%, 620px);
+  margin:
+    clamp(2.2rem, 4vw, 3.6rem)
+    auto 0;
+
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(0.88rem, 1vw, 1rem);
+  font-weight: 400;
+  line-height: 2.25;
+  letter-spacing: 0.08em;
+  color: rgba(238, 242, 244, 0.56);
+}
+
+.note {
+  margin-top: clamp(2.6rem, 5vw, 4.4rem);
+
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(0.92rem, 1.4vw, 1.32rem);
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.18em;
+  color: rgba(216, 230, 238, 0.36);
+}
+
+@media (max-width: 900px) {
+  .invitation {
+    min-height: 620px;
+  }
+
+  .inner {
+    padding: 7rem 1.5rem;
+  }
+
+  .title {
+    font-size: clamp(2rem, 7.6vw, 3.8rem);
+    letter-spacing: 0.1em;
+  }
+
+  .lead {
+    line-height: 2.15;
+  }
+
+  .wave {
+    width: 120vw;
+    height: 120vw;
+  }
+}
+
+@media (max-width: 560px) {
+  .invitation {
+    min-height: 560px;
+  }
+
+  .inner {
+    padding: 6.4rem 1.25rem;
+  }
+
+  .kicker {
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+  }
+
+  .jaLabel {
+    margin-bottom: 1.7rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+  }
+
+  .title {
+    font-size: clamp(1.95rem, 9vw, 3.2rem);
+    line-height: 1.5;
+  }
+
+  .lead {
+    margin-top: 2rem;
+    font-size: 0.84rem;
+    line-height: 2.05;
+    letter-spacing: 0.06em;
+  }
+
+  .note {
+    margin-top: 2.8rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+  }
+}

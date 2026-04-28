@@ -1,0 +1,671 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+
+  color: var(--color-milk);
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(127, 160, 181, 0.11) 0%,
+      rgba(127, 160, 181, 0.035) 34%,
+      rgba(5, 11, 16, 0) 66%
+    ),
+    linear-gradient(
+      180deg,
+      #050b10 0%,
+      #04080c 100%
+    );
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+
+  width: min(88vw, 1120px);
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(238, 242, 244, 0),
+    rgba(238, 242, 244, 0.24),
+    rgba(127, 160, 181, 0.18),
+    rgba(238, 242, 244, 0)
+  );
+
+  transform: translateX(-50%);
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.air {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 52% 20%,
+      rgba(216, 230, 238, 0.055) 0%,
+      rgba(127, 160, 181, 0.02) 34%,
+      rgba(5, 11, 16, 0) 72%
+    );
+
+  filter: blur(34px);
+  opacity: 0.86;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding:
+    clamp(4.8rem, 8vw, 7.4rem)
+    clamp(1.5rem, 5vw, 6rem)
+    clamp(2rem, 4vw, 3.6rem);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: auto minmax(280px, 480px);
+  justify-content: space-between;
+  align-items: start;
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.logo {
+  width: clamp(28px, 2.4vw, 38px);
+  height: clamp(28px, 2.4vw, 38px);
+  object-fit: contain;
+
+  opacity: 0.52;
+  filter:
+    saturate(0.78)
+    brightness(0.92)
+    drop-shadow(0 0 16px rgba(127, 160, 181, 0.12));
+}
+
+.brandText {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.brandJa {
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(0.86rem, 1vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(238, 242, 244, 0.72);
+}
+
+.brandEn {
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(0.68rem, 0.78vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  color: rgba(216, 230, 238, 0.38);
+}
+
+.statement {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.8rem);
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+  color: rgba(238, 242, 244, 0.44);
+}
+
+.middle {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(320px, 0.72fr);
+  justify-content: space-between;
+  gap: clamp(3rem, 7vw, 8rem);
+
+  margin-top: clamp(4.5rem, 8vw, 7.2rem);
+  padding-top: clamp(2rem, 3vw, 2.8rem);
+
+  border-top: 1px solid rgba(238, 242, 244, 0.09);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem clamp(1.6rem, 3vw, 3.2rem);
+}
+
+.nav a,
+.legal a {
+  position: relative;
+
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(0.78rem, 0.86vw, 0.92rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(238, 242, 244, 0.42);
+  text-transform: uppercase;
+
+  transition:
+    color 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav a:hover,
+.legal a:hover {
+  color: rgba(238, 242, 244, 0.78);
+}
+
+.info dl {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.info dl > div {
+  display: grid;
+  grid-template-columns: 8.8rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.info dt {
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.24em;
+  color: rgba(216, 230, 238, 0.32);
+  text-transform: uppercase;
+}
+
+.info dd {
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(0.82rem, 0.95vw, 0.98rem);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+  color: rgba(238, 242, 244, 0.58);
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+
+  margin-top: clamp(4rem, 7vw, 6.4rem);
+}
+
+.notice {
+  margin: 0;
+
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+  font-size: clamp(0.68rem, 0.78vw, 0.78rem);
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: 0.08em;
+  color: rgba(238, 242, 244, 0.36);
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.9rem clamp(1.2rem, 2vw, 2.2rem);
+}
+
+.legal a {
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: rgba(238, 242, 244, 0.32);
+}
+
+.copy {
+  margin-top: clamp(2.2rem, 4vw, 3.2rem);
+
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: rgba(238, 242, 244, 0.26);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 4.8rem 1.5rem 2.6rem;
+  }
+
+  .top {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+  }
+
+  .statement {
+    max-width: 560px;
+  }
+
+  .middle {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+    margin-top: 4rem;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .legal {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .inner {
+    padding: 4.2rem 1.25rem 2.2rem;
+  }
+
+  .brand {
+    gap: 0.75rem;
+  }
+
+  .logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .brandJa {
+    font-size: 0.84rem;
+    letter-spacing: 0.18em;
+  }
+
+  .brandEn {
+    font-size: 0.62rem;
+    letter-spacing: 0.24em;
+  }
+
+  .statement {
+    font-size: 1.18rem;
+    line-height: 1.6;
+  }
+
+  .nav {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .info dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.22rem;
+  }
+
+  .bottom {
+    margin-top: 3.6rem;
+  }
+
+  .notice {
+    font-size: 0.66rem;
+  }
+
+  .legal {
+    display: grid;
+    gap: 0.9rem;
+  }
+}
+.footer {
+  position: relative;
+  overflow: hidden;
+
+  color: var(--color-milk);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 11, 16, 0.78) 0%,
+      rgba(4, 8, 12, 0.92) 58%,
+      rgba(4, 8, 12, 1) 100%
+    ),
+    url("/images/footer-sea.png"),
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(127, 160, 181, 0.11) 0%,
+      rgba(127, 160, 181, 0.035) 34%,
+      rgba(5, 11, 16, 0) 66%
+    ),
+    linear-gradient(
+      180deg,
+      #050b10 0%,
+      #04080c 100%
+    );
+
+  background-size: cover;
+  background-position: center 58%;
+  background-repeat: no-repeat;
+}
+.inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding:
+    clamp(4.8rem, 8vw, 7.4rem)
+    clamp(1.5rem, 5vw, 6rem)
+    clamp(2rem, 4vw, 3.6rem);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: auto minmax(280px, 480px);
+  justify-content: space-between;
+  align-items: start;
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: fit-content;
+}
+
+.logo {
+  width: clamp(28px, 2.4vw, 38px);
+  height: clamp(28px, 2.4vw, 38px);
+  object-fit: contain;
+
+  opacity: 0.52;
+  filter:
+    saturate(0.78)
+    brightness(0.92)
+    drop-shadow(0 0 16px rgba(127, 160, 181, 0.12));
+}
+
+.brandText {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.brandJa {
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(0.86rem, 1vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(238, 242, 244, 0.72);
+}
+
+.brandEn {
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(0.68rem, 0.78vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  color: rgba(216, 230, 238, 0.38);
+}
+
+.statement {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.8rem);
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+  color: rgba(238, 242, 244, 0.44);
+}
+
+.middle {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(320px, 0.72fr);
+  justify-content: space-between;
+  gap: clamp(3rem, 7vw, 8rem);
+
+  margin-top: clamp(4.5rem, 8vw, 7.2rem);
+  padding-top: clamp(2rem, 3vw, 2.8rem);
+
+  border-top: 1px solid rgba(238, 242, 244, 0.09);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem clamp(1.6rem, 3vw, 3.2rem);
+}
+
+.nav a,
+.legal a {
+  position: relative;
+
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(0.78rem, 0.86vw, 0.92rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(238, 242, 244, 0.42);
+  text-transform: uppercase;
+
+  transition:
+    color 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav a:hover,
+.legal a:hover,
+.credit:hover {
+  color: rgba(238, 242, 244, 0.78);
+}
+
+.info dl {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.info dl > div {
+  display: grid;
+  grid-template-columns: 8.8rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.info dt {
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.24em;
+  color: rgba(216, 230, 238, 0.32);
+  text-transform: uppercase;
+}
+
+.info dd {
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(0.82rem, 0.95vw, 0.98rem);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+  color: rgba(238, 242, 244, 0.58);
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+
+  margin-top: clamp(4rem, 7vw, 6.4rem);
+}
+
+.notice {
+  margin: 0;
+
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+  font-size: clamp(0.68rem, 0.78vw, 0.78rem);
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: 0.08em;
+  color: rgba(238, 242, 244, 0.36);
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.9rem clamp(1.2rem, 2vw, 2.2rem);
+}
+
+.legal a {
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: rgba(238, 242, 244, 0.32);
+}
+
+.creditBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+
+  margin-top: clamp(2.2rem, 4vw, 3.2rem);
+  padding-top: 1.2rem;
+
+  border-top: 1px solid rgba(238, 242, 244, 0.06);
+}
+
+.copy,
+.credit {
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: 0.18em;
+  color: rgba(238, 242, 244, 0.26);
+}
+
+.copy {
+  margin: 0;
+}
+
+.credit {
+  white-space: nowrap;
+
+  transition:
+    color 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 4.8rem 1.5rem 2.6rem;
+  }
+
+  .top {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+  }
+
+  .statement {
+    max-width: 560px;
+  }
+
+  .middle {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+    margin-top: 4rem;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .legal {
+    justify-content: flex-start;
+  }
+
+  .creditBlock {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .inner {
+    padding: 4.2rem 1.25rem 2.2rem;
+  }
+
+  .seaLayer {
+    height: 68vw;
+    opacity: 0.16;
+  }
+
+  .brand {
+    gap: 0.75rem;
+  }
+
+  .logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .brandJa {
+    font-size: 0.84rem;
+    letter-spacing: 0.18em;
+  }
+
+  .brandEn {
+    font-size: 0.62rem;
+    letter-spacing: 0.24em;
+  }
+
+  .statement {
+    font-size: 1.18rem;
+    line-height: 1.6;
+  }
+
+  .statement br {
+    display: none;
+  }
+
+  .nav {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .info dl {
+    gap: 1.25rem;
+  }
+
+  .info dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .notice {
+    font-size: 0.66rem;
+    line-height: 1.85;
+  }
+
+  .legal {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .copy,
+  .credit {
+    font-size: 0.54rem;
+    letter-spacing: 0.14em;
+  }
+}
