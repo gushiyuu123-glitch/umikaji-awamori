@@ -1,23 +1,124 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja" translate="no">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Google翻訳を完全無効化 -->
     <meta name="google" content="notranslate" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&family=Shippori+Mincho+B1:wght@400;500&display=swap"
-    rel="stylesheet">
-  <title>umikaji-awamori</title>
-</head>
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <!-- Basic SEO -->
+    <title>UMIKAJI AWAMORI｜海風 泡盛</title>
+    <meta
+      name="description"
+      content="UMIKAJI AWAMORIは、沖縄の夜気、黒麹の深み、海風の余韻を澄んだ一滴へと磨き上げた現代の泡盛ブランドです。"
+    />
+    <meta
+      name="keywords"
+      content="UMIKAJI, 海風, 泡盛, Awamori, 沖縄, Okinawa, 黒麹, 酒, ブランドサイト, GUSHIKEN DESIGN"
+    />
+    <meta name="author" content="YUTO / GUSHIKEN DESIGN" />
+    <meta
+      name="copyright"
+      content="© 2026 YUTO / GUSHIKEN DESIGN. All rights reserved."
+    />
+    <meta name="robots" content="index, follow" />
 
+    <!-- Canonical -->
+    <link rel="canonical" href="https://umikaji-awamori.vercel.app/" />
+
+    <!-- Icons / Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- PWA / App Icon -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#071016" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Open Graph / Facebook / LINE -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="UMIKAJI AWAMORI" />
+    <meta property="og:title" content="UMIKAJI AWAMORI｜海風 泡盛" />
+    <meta
+      property="og:description"
+      content="沖縄の夜気、黒麹の深み、海風の余韻を、澄んだ一滴へ。現代の泡盛ブランド、UMIKAJI AWAMORI。"
+    />
+    <meta property="og:url" content="https://umikaji-awamori.vercel.app/" />
+    <meta
+      property="og:image"
+      content="https://umikaji-awamori.vercel.app/images/ogp-umikaji.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="UMIKAJI AWAMORI 海風 泡盛のブランドビジュアル"
+    />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UMIKAJI AWAMORI｜海風 泡盛" />
+    <meta
+      name="twitter:description"
+      content="沖縄の夜気、黒麹の深み、海風の余韻を、澄んだ一滴へ。現代の泡盛ブランド、UMIKAJI AWAMORI。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://umikaji-awamori.vercel.app/images/ogp-umikaji.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="UMIKAJI AWAMORI 海風 泡盛のブランドビジュアル"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&family=Shippori+Mincho+B1:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Brand",
+        "name": "UMIKAJI AWAMORI",
+        "alternateName": "海風 泡盛",
+        "url": "https://umikaji-awamori.vercel.app/",
+        "logo": "https://umikaji-awamori.vercel.app/images/logo-umikaji.png",
+        "image": "https://umikaji-awamori.vercel.app/images/ogp-umikaji.png",
+        "description": "UMIKAJI AWAMORIは、沖縄の夜気、黒麹の深み、海風の余韻を澄んだ一滴へと磨き上げた現代の泡盛ブランドです。",
+        "slogan": "島の記憶を、澄んだ一滴へ。",
+        "founder": {
+          "@type": "Person",
+          "name": "YUTO"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "GUSHIKEN DESIGN",
+          "url": "https://gushikendesign.com/"
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <noscript>
+      UMIKAJI AWAMORIのブランドサイトを表示するにはJavaScriptを有効にしてください。
+    </noscript>
+
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
