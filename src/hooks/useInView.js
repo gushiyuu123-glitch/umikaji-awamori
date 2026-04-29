@@ -12,6 +12,8 @@ function useInView({
     const target = ref.current;
     if (!target) return;
 
+    if (typeof window === "undefined") return;
+
     if (typeof IntersectionObserver === "undefined") {
       setIsInView(true);
       return;
@@ -19,13 +21,19 @@ function useInView({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        const visible = entry.isIntersecting;
+
+        if (visible) {
           setIsInView(true);
 
           if (once) {
             observer.unobserve(target);
           }
-        } else if (!once) {
+
+          return;
+        }
+
+        if (!once) {
           setIsInView(false);
         }
       },
@@ -38,6 +46,7 @@ function useInView({
     observer.observe(target);
 
     return () => {
+      observer.unobserve(target);
       observer.disconnect();
     };
   }, [threshold, rootMargin, once]);

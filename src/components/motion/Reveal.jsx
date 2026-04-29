@@ -34,8 +34,8 @@ function Reveal({
         .filter(Boolean)
         .join(" ")}
       style={{
-        "--reveal-delay": `${delay}ms`,
-        "--reveal-duration": `${duration}ms`,
+        transitionDelay: `${delay}ms`,
+        transitionDuration: `${duration}ms`,
         ...style,
       }}
     >

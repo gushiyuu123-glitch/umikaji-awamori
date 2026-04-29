@@ -1,21 +1,24 @@
 {
-  "name": "UMIKAJI AWAMORI",
+  "name": "UMIKAJI AWAMORI｜海風 泡盛",
   "short_name": "UMIKAJI",
-  "description": "沖縄の夜気、黒麹の深み、海風の余韻を澄んだ一滴へ。",
+  "description": "沖縄の夜気、黒麹の深み、海風の余韻を澄んだ一滴へと磨き上げた現代の泡盛ブランドです。",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#071016",
   "theme_color": "#071016",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/umikaji-logo-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/umikaji-logo-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
