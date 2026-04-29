@@ -818,3 +818,10 @@
     transform: translateY(-0.3rem);
   }
 }
+.hero {
+  /* 既存のプロパティはそのまま */
+  touch-action: pan-y;
+}
+html, body {
+  overscroll-behavior: none;
+}
