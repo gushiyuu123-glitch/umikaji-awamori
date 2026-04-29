@@ -12,7 +12,7 @@ function Navigation() {
         />
 
         <span className={styles.brandText}>
-          <span className={styles.brandJa}>海風 泡盛</span>
+          <span className={styles.brandJa}>海風</span>
           <span className={styles.brandEn}>UMIKAJI AWAMORI</span>
         </span>
       </a>
@@ -20,7 +20,7 @@ function Navigation() {
       <nav className={styles.menu} aria-label="Primary navigation">
         <a href="#concept">Concept</a>
         <a href="#taste">Taste</a>
-        <a href="#product">Product</a>
+        <a href="#craft">Craft</a>
       </nav>
 
       <p className={styles.ageLabel}>20+ / DRINK RESPONSIBLY</p>

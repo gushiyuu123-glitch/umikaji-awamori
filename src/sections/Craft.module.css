@@ -21,8 +21,12 @@
   object-fit: cover;
   object-position: center;
 
+  --craft-scale-start: 1.04;
+  --craft-scale-mid: 1.068;
+  --craft-scale-end: 1.095;
+
   transform-origin: 52% 44%;
-  transform: scale(1.04) translate3d(0, 0, 0);
+  transform: scale(var(--craft-scale-start)) translate3d(0, 0, 0);
 
   filter:
     brightness(0.7)
@@ -224,9 +228,17 @@
     letter-spacing: 0.22em;
   }
 }
+
+
+@media (prefers-reduced-motion: reduce) {
+  .bgImage {
+    animation: none;
+    transform: scale(1.055);
+  }
+}
 @keyframes craftImageCinema {
   0% {
-    transform: scale(1.04) translate3d(-0.4%, 0.2%, 0);
+    transform: scale(var(--craft-scale-start)) translate3d(-0.4%, 0.2%, 0);
     filter:
       brightness(0.68)
       contrast(1.05)
@@ -234,7 +246,7 @@
   }
 
   50% {
-    transform: scale(1.068) translate3d(0.15%, -0.15%, 0);
+    transform: scale(var(--craft-scale-mid)) translate3d(0.15%, -0.15%, 0);
     filter:
       brightness(0.72)
       contrast(1.07)
@@ -242,17 +254,23 @@
   }
 
   100% {
-    transform: scale(1.095) translate3d(0.45%, -0.35%, 0);
+    transform: scale(var(--craft-scale-end)) translate3d(0.45%, -0.35%, 0);
     filter:
       brightness(0.66)
       contrast(1.08)
       saturate(0.86);
   }
 }
+.lead span {
+  display: block;
+}
 
-@media (prefers-reduced-motion: reduce) {
-  .bgImage {
-    animation: none;
-    transform: scale(1.055);
+@media (max-width: 560px) {
+  .lead span {
+    display: inline;
   }
+}
+.note {
+  font-size: 0.64rem;
+  letter-spacing: 0.22em;
 }

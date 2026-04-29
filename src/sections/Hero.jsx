@@ -13,13 +13,15 @@ function Hero() {
         className={styles.heroImage}
         src="/images/hero-umikaji.png"
         alt="海風 泡盛のボトルとグラス"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
       />
 
-      <div className={styles.shade} />
-      <div className={styles.productAura} />
-      <div className={styles.mist} />
+      <div className={styles.shade} aria-hidden="true" />
+      <div className={styles.productAura} aria-hidden="true" />
+      <div className={styles.mist} aria-hidden="true" />
 
-      {/* 追加 */}
       <div className={styles.productFx} aria-hidden="true">
         <span className={`${styles.smoke} ${styles.smoke1}`} />
         <span className={`${styles.smoke} ${styles.smoke2}`} />
@@ -51,16 +53,17 @@ function Hero() {
           </p>
 
           <p className={styles.description}>
-            黒麹の深みを残しながら、余韻はどこまでも澄んでいく。<br />
-            沖縄の夜と海風を静かに閉じ込めた、現代の泡盛。
+            黒麹の深みを残しながら、余韻はどこまでも澄んでいく。
+            <br />
+            沖縄の夜と海風を、静かに閉じ込めた現代の泡盛。
           </p>
 
-          <div className={styles.actions}>
+          <div className={styles.actions} aria-label="UMIKAJI AWAMORI navigation">
             <button
               className={`${styles.ctaButton} ${styles.primaryButton}`}
               type="button"
             >
-              <span className={styles.ctaText}>Pour</span>
+              <span className={styles.ctaText}>Taste Note</span>
               <span className={styles.ctaIcon} aria-hidden="true">
                 <span className={styles.ice} />
               </span>
@@ -70,7 +73,7 @@ function Hero() {
               className={`${styles.ctaButton} ${styles.secondaryButton}`}
               type="button"
             >
-              <span className={styles.ctaText}>On Ice</span>
+              <span className={styles.ctaText}>Craft Story</span>
               <span className={styles.ctaIcon} aria-hidden="true">
                 <span className={styles.ice} />
                 <span className={styles.ice} />
@@ -80,7 +83,7 @@ function Hero() {
         </div>
 
         <div className={styles.footer}>
-          <dl className={styles.detailList}>
+          <dl className={styles.detailList} aria-label="Product details">
             {productDetails.map((item) => (
               <div className={styles.detailItem} key={item.label}>
                 <dt>{item.label}</dt>

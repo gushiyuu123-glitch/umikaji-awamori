@@ -18,14 +18,14 @@ const tasteNotes = [
     image: "/images/taste-deep.png",
     alt: "静かな光の中で深みを感じさせる泡盛のグラス",
   },
-  {
-    number: "03",
-    title: "AFTER",
-    ja: "海風の余韻",
-    text: "飲み終えたあとに残るのは、甘さでも重さでもなく、島の湿度と海風がほどけていくような静かな余韻。",
-    image: "/images/taste-after.png",
-    alt: "余韻を感じさせる泡盛と静かな空気感の演出",
-  },
+{
+  number: "03",
+  title: "FINISH",
+  ja: "海風の余韻",
+  text: "飲み終えたあとに残るのは、甘さでも重さでもなく、島の湿度と海風がほどけていくような静かな余韻。",
+  image: "/images/taste-after.png",
+  alt: "余韻を感じさせる泡盛と静かな空気感の演出",
+},
 ];
 
 function Taste() {

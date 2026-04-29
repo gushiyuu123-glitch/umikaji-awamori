@@ -443,3 +443,23 @@
     animation: none;
   }
 }
+.productButton {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.glow {
+  opacity: 0.62;
+  filter: blur(38px);
+}
+
+.wave {
+  opacity: 0.12;
+  filter: blur(24px);
+}
+
+.imageMist {
+  opacity: 0.58;
+  filter: blur(16px);
+}

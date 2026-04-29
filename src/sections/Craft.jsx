@@ -31,9 +31,8 @@ function Craft() {
 
         <Reveal as="p" className={styles.lead} delay={280} direction="still">
           伝統的な泡盛の骨格を残しながら、重さではなく、澄んだ余韻へ。
-          UMIKAJI AWAMORIは、島の湿度と夜の静けさの中で、
-          <br />
-          ゆっくりと磨かれていく。
+      <span>UMIKAJI AWAMORIは、島の湿度と夜の静けさの中で、</span>
+<span>ゆっくりと磨かれていく。</span>
         </Reveal>
       </div>
 

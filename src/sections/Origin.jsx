@@ -3,19 +3,18 @@ import styles from "./Origin.module.css";
 
 const originDetails = [
   {
-    label: "PLACE",
+    label: "TERRAIN",
     value: "ISLAND SHORE",
   },
   {
-    label: "AIR",
-    value: "SEA BREEZE",
+    label: "SEA AIR",
+    value: "SALT BREEZE",
   },
   {
-    label: "MOOD",
-    value: "NIGHT HUMIDITY",
+    label: "AFTER DARK",
+    value: "BLUE HUMIDITY",
   },
 ];
-
 function Origin() {
   return (
     <section

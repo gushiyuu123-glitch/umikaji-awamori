@@ -10,6 +10,7 @@ const encounterItems = [
       "冷えた夜に、最初の一杯を迎えるための入口です。",
     ],
     linkText: "View Store",
+    href: "/",
   },
   {
     label: "RESTAURANT / BAR",
@@ -20,17 +21,22 @@ const encounterItems = [
       "少しずつ出会いを広げています。",
     ],
     linkText: "Find Places",
+    href: "/",
   },
   {
     label: "FOR PARTNERS",
     title: "取扱いのご相談について。",
     text: [
       "飲食店様、ギフト、イベントでのお取り扱いについては、",
-      "こちらから静かにご相談いただけます。",
+      "ブランドの空気を大切にしながらご案内いたします。",
     ],
     linkText: "Contact",
+    href: "https://gushikendesign.com/",
+    external: true,
   },
 ];
+
+const atmosphereWords = ["SEA BREEZE", "NIGHT AIR", "CLEAR FINISH"];
 
 function Encounter() {
   return (
@@ -40,101 +46,67 @@ function Encounter() {
       aria-label="UMIKAJI AWAMORI encounter"
     >
       <div className={styles.bgGlow} aria-hidden="true" />
-      <div className={styles.bgLine} aria-hidden="true" />
+      <div className={styles.grain} aria-hidden="true" />
+
+      <div className={styles.typeMist} aria-hidden="true">
+        {atmosphereWords.map((word) => (
+          <span key={word}>{word}</span>
+        ))}
+      </div>
 
       <div className={styles.inner}>
-        <div className={styles.grid}>
-          <Reveal as="div" className={styles.visualWrap} direction="soft">
-            <div className={styles.waveObject} aria-hidden="true">
-              <svg
-                className={styles.waveSvg}
-                viewBox="0 0 420 760"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  className={`${styles.waveLine} ${styles.wave1}`}
-                  d="M148 42C104 122 103 185 151 264C196 338 196 410 151 488C103 571 104 650 151 724"
-                />
-                <path
-                  className={`${styles.waveLine} ${styles.wave2}`}
-                  d="M210 24C158 112 160 189 213 278C263 362 262 432 212 516C160 604 159 674 212 744"
-                />
-                <path
-                  className={`${styles.waveLine} ${styles.wave3}`}
-                  d="M270 58C230 132 231 204 272 278C314 354 314 432 272 506C231 580 230 657 271 716"
-                />
-                <path
-                  className={`${styles.waveLine} ${styles.wave4}`}
-                  d="M92 116C66 184 70 238 96 300C126 371 125 432 95 500C66 566 67 626 94 682"
-                />
-                <path
-                  className={`${styles.waveLine} ${styles.wave5}`}
-                  d="M330 106C360 174 358 236 328 306C296 382 298 448 329 520C359 590 358 648 329 704"
-                />
-              </svg>
-
-              <div className={styles.waveMist} />
-      
-            </div>
+        <div className={styles.heading}>
+          <Reveal as="p" className={styles.kicker} direction="soft">
+            ENCOUNTER
           </Reveal>
 
-          <div className={styles.content}>
-            <Reveal as="p" className={styles.kicker} direction="soft">
-              ENCOUNTER
-            </Reveal>
+          <Reveal as="p" className={styles.jaLabel} delay={80}>
+            出会いについて
+          </Reveal>
 
-            <Reveal as="p" className={styles.jaLabel} delay={100}>
-              出会える場所
-            </Reveal>
+          <Reveal as="h2" className={styles.title} delay={140}>
+            <span>海風と、</span>
+            <span>出会う場所。</span>
+          </Reveal>
 
-            <Reveal as="h2" className={styles.title} delay={160}>
-              <span>海風は、静かな場所へ</span>
-              <span>届いていく。</span>
-            </Reveal>
-
-       <Reveal as="p" className={styles.lead} delay={240}>
-  <span>UMIKAJI AWAMORIは、ただ並ぶための酒ではありません。</span>
-  <span>一杯の温度、置かれる空間、</span>
-  <span>そしてグラスに触れる時間までを含めて、</span>
-  <span>静かに出会ってほしい泡盛です。</span>
-</Reveal>
-            <div className={styles.items}>
-              {encounterItems.map((item, index) => (
-                <Reveal
-                  as="article"
-                  className={styles.item}
-                  delay={320 + index * 140}
-                  key={item.label}
-                >
-                  <p className={styles.itemLabel}>{item.label}</p>
-
-                  <div className={styles.itemBody}>
-                    <h3 className={styles.itemTitle}>{item.title}</h3>
-            <p className={styles.itemText}>
-  {item.text.map((line) => (
-    <span key={line}>
-      {line}
-      <br />
-    </span>
-  ))}
-</p>
-
-                    <a
-                      href="/"
-                      onClick={(e) => e.preventDefault()}
-                      className={styles.itemLink}
-                      aria-label={item.linkText}
-                    >
-                      <span>{item.linkText}</span>
-                      <span className={styles.linkLine} aria-hidden="true" />
-                    </a>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
+          <Reveal as="div" className={styles.lead} delay={220}>
+            <p>
+              UMIKAJI AWAMORIは、<br></br>ただ棚に並ぶための酒ではありません。
+            </p>
+            <p>
+              一杯の温度、置かれる空間、<br></br>そしてグラスに触れる時間までを含めて、<br></br>
+              静かに出会ってほしい泡盛です。
+            </p>
+          </Reveal>
         </div>
+
+        <Reveal as="div" className={styles.items} delay={280}>
+          {encounterItems.map((item) => (
+            <article className={styles.item} key={item.label}>
+              <p className={styles.itemLabel}>{item.label}</p>
+
+              <div className={styles.itemBody}>
+                <h3 className={styles.itemTitle}>{item.title}</h3>
+
+                <div className={styles.itemText}>
+                  {item.text.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
+
+                <a
+                  className={styles.itemLink}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noreferrer" : undefined}
+                >
+                  <span>{item.linkText}</span>
+                  <span className={styles.linkLine} aria-hidden="true" />
+                </a>
+              </div>
+            </article>
+          ))}
+        </Reveal>
       </div>
     </section>
   );
