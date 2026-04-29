@@ -75,7 +75,7 @@ function Encounter() {
               </svg>
 
               <div className={styles.waveMist} />
-              <div className={styles.waveDot} />
+      
             </div>
           </Reveal>
 

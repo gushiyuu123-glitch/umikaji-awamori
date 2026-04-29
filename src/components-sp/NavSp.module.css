@@ -1,0 +1,336 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  width: 100%;
+  height: 4.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem 1.25rem 0;
+  pointer-events: none;
+}
+
+/* =========================
+   Header Front Layer
+========================= */
+
+.brand,
+.menuButton {
+  position: relative;
+  z-index: 50;
+  pointer-events: auto;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.62rem;
+  text-decoration: none;
+  color: rgba(243, 240, 234, 0.9);
+}
+
+.logo {
+  width: 2rem;
+  height: auto;
+  display: block;
+  opacity: 0.9;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  line-height: 1;
+}
+
+.brandJa {
+  font-family: "Shippori Mincho B1", "Noto Serif JP", serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  color: rgba(243, 240, 234, 0.92);
+}
+
+.brandEn {
+  font-family: "Inter", sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  color: rgba(220, 228, 234, 0.56);
+}
+
+/* =========================
+   Bottle Menu Trigger
+========================= */
+
+.menuButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: 0;
+  background: transparent;
+  padding: 0.4rem 0 0.4rem 0.25rem;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: rgba(243, 240, 234, 0.7);
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menuBottle {
+  position: relative;
+  display: block;
+
+  width: 0.42rem;
+  height: 1.48rem;
+
+  border: 1px solid rgba(226, 236, 235, 0.48);
+  border-radius: 0.22rem 0.22rem 0.12rem 0.12rem;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(243, 240, 234, 0.16) 0%,
+      rgba(127, 160, 181, 0.09) 42%,
+      rgba(4, 10, 15, 0.16) 100%
+    );
+
+  box-shadow:
+    inset 0 -0.34rem 0 rgba(127, 160, 181, 0.11),
+    0 0 10px rgba(127, 160, 181, 0.14);
+
+  opacity: 0.78;
+  transform-origin: center bottom;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.menuBottle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -0.34rem;
+
+  width: 0.2rem;
+  height: 0.36rem;
+
+  transform: translateX(-50%);
+
+  border: 1px solid rgba(226, 236, 235, 0.42);
+  border-bottom: 0;
+  border-radius: 0.08rem 0.08rem 0 0;
+
+  background: rgba(243, 240, 234, 0.08);
+}
+
+.menuBottle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0.46rem;
+
+  width: 0.18rem;
+  height: 0.46rem;
+
+  transform: translateX(-50%);
+
+  border-left: 1px solid rgba(243, 240, 234, 0.22);
+}
+
+.menuText {
+  display: block;
+  padding-left: 0.2em;
+  text-shadow: 0 1px 8px rgba(0, 10, 18, 0.38);
+}
+
+.menuButtonOpen {
+  color: rgba(243, 240, 234, 0.9);
+}
+
+.menuButtonOpen .menuBottle {
+  opacity: 0.95;
+  transform: rotate(-8deg);
+  border-color: rgba(243, 240, 234, 0.68);
+}
+
+/* =========================
+   Open Menu Panel
+========================= */
+
+.menuPanel {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(127, 160, 181, 0.16) 0%,
+      rgba(127, 160, 181, 0.06) 26%,
+      rgba(8, 13, 18, 0) 50%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(7, 11, 15, 0.94) 0%,
+      rgba(8, 13, 18, 0.9) 52%,
+      rgba(4, 8, 12, 0.96) 100%
+    );
+
+  backdrop-filter: blur(16px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 0.45s ease;
+}
+
+.menuPanelOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 物理的に中央固定 */
+.menuList {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: max-content;
+  max-width: 80vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.22rem;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  text-align: center;
+
+  transform: translate(-50%, -50%);
+}
+
+.menuItem {
+  opacity: 0;
+  transform: translateY(0.45rem);
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+
+.menuPanelOpen .menuItem {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menuPanelOpen .menuItem:nth-child(1) {
+  transition-delay: 0.06s;
+}
+
+.menuPanelOpen .menuItem:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.menuPanelOpen .menuItem:nth-child(3) {
+  transition-delay: 0.14s;
+}
+
+.menuPanelOpen .menuItem:nth-child(4) {
+  transition-delay: 0.18s;
+}
+
+.menuPanelOpen .menuItem:nth-child(5) {
+  transition-delay: 0.22s;
+}
+
+.menuPanelOpen .menuItem:nth-child(6) {
+  transition-delay: 0.26s;
+}
+
+.menuLink {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menuLinkMain {
+  display: block;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.24em;
+  text-indent: 0.24em;
+  text-transform: uppercase;
+
+  color: rgba(243, 240, 234, 0.9);
+}
+
+.menuLinkSub {
+  display: block;
+
+  margin-top: 0.36rem;
+
+  font-family: "Shippori Mincho B1", "Noto Serif JP", serif;
+  font-size: 0.62rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-indent: 0.16em;
+
+  color: rgba(191, 207, 216, 0.5);
+}
+
+.menuAge {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+
+  margin: 0;
+
+  transform: translateX(-50%);
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.22em;
+  text-indent: 0.22em;
+  white-space: nowrap;
+
+  color: rgba(220, 228, 234, 0.34);
+}
+.brandJa {
+  font-family: "Shippori Mincho B1", "Noto Serif JP", serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  color: rgba(243, 240, 234, 0.86);
+}
+
+.brandEn {
+  font-family: "Inter", sans-serif;
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
+  color: rgba(220, 228, 234, 0.62);
+}

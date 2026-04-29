@@ -1,0 +1,385 @@
+.origin {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-milk);
+  background:
+    radial-gradient(
+      circle at 18% 28%,
+      rgba(127, 160, 181, 0.16) 0%,
+      rgba(127, 160, 181, 0.06) 34%,
+      rgba(127, 160, 181, 0) 62%
+    ),
+    radial-gradient(
+      circle at 86% 72%,
+      rgba(181, 154, 119, 0.08) 0%,
+      rgba(181, 154, 119, 0.025) 36%,
+      rgba(181, 154, 119, 0) 68%
+    ),
+    linear-gradient(
+      180deg,
+      #101316 0%,
+      #12191d 48%,
+      #0f1315 100%
+    );
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(243, 240, 234, 0.028) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      180deg,
+      rgba(243, 240, 234, 0.018) 1px,
+      transparent 1px
+    );
+  background-size: 112px 112px;
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    black 18%,
+    black 76%,
+    transparent 100%
+  );
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 54% 22%,
+      rgba(238, 242, 244, 0.06) 0%,
+      rgba(238, 242, 244, 0) 34%
+    );
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding: clamp(7rem, 11vw, 12rem) clamp(1.5rem, 5vw, 6rem);
+}
+
+.kicker {
+  margin: 0 0 clamp(3rem, 5vw, 5.5rem);
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  color: rgba(200, 195, 187, 0.52);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.92fr) minmax(0, 0.78fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: center;
+}
+
+.visualBlock {
+  position: relative;
+}
+
+.imageFrame {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 0;
+  background: rgba(243, 240, 234, 0.04);
+}
+
+.imageFrame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13, 17, 19, 0.08) 0%,
+      rgba(13, 17, 19, 0.16) 58%,
+      rgba(13, 17, 19, 0.5) 100%
+    ),
+    radial-gradient(
+      circle at 42% 34%,
+      rgba(127, 160, 181, 0.18) 0%,
+      rgba(127, 160, 181, 0) 58%
+    );
+  pointer-events: none;
+}
+
+.imageFrame::after {
+  content: "";
+  position: absolute;
+  inset: 1.1rem;
+  z-index: 2;
+  border: 1px solid rgba(243, 240, 234, 0.12);
+  pointer-events: none;
+}
+
+.imageFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.82) contrast(1.04) brightness(0.82);
+  transform: scale(1.02);
+}
+
+.content {
+  max-width: 620px;
+  margin-left: auto;
+}
+
+.jaLabel {
+  margin: 0 0 1.45rem;
+  font-family: "Shippori Mincho B1", "Noto Serif JP", serif;
+  font-size: clamp(0.92rem, 1vw, 1.06rem);
+  letter-spacing: 0.24em;
+  color: rgba(243, 240, 234, 0.5);
+}
+
+.title {
+  margin: 0;
+  font-family: "Shippori Mincho B1", "Noto Serif JP", serif;
+  font-size: clamp(2.8rem, 4vw, 5.8rem);
+  font-weight: 400;
+  line-height: 1.46;
+  letter-spacing: 0.11em;
+  color: rgba(243, 240, 234, 0.94);
+  text-rendering: geometricPrecision;
+}
+
+.title span {
+  display: block;
+}
+
+.lead {
+  margin: clamp(2.2rem, 4vw, 3.8rem) 0 0;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(1rem, 1.16vw, 1.16rem);
+  font-weight: 400;
+  line-height: 2.24;
+  letter-spacing: 0.08em;
+  color: rgba(243, 240, 234, 0.76);
+}
+
+.text {
+  margin: 1.6rem 0 0;
+  font-family: "Noto Sans JP", "Inter", sans-serif;
+  font-size: clamp(0.86rem, 0.95vw, 0.96rem);
+  font-weight: 300;
+  line-height: 2.12;
+  letter-spacing: 0.06em;
+  color: rgba(243, 240, 234, 0.52);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: clamp(3rem, 5vw, 4.8rem) 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid rgba(243, 240, 234, 0.12);
+}
+
+.detailItem {
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.detailItem + .detailItem {
+  padding-left: 1.5rem;
+  border-left: 1px solid rgba(243, 240, 234, 0.1);
+}
+
+.detailItem dt {
+  margin: 0 0 0.55rem;
+  font-family: "Inter", "Noto Sans JP", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  color: rgba(200, 195, 187, 0.42);
+}
+
+.detailItem dd {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.1rem, 1.45vw, 1.55rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(243, 240, 234, 0.64);
+  text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .visualBlock {
+    max-width: 680px;
+  }
+
+  .imageFrame {
+    aspect-ratio: 16 / 10;
+  }
+
+  .content {
+    max-width: 720px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    padding: 5.8rem 1.25rem;
+  }
+
+  .kicker {
+    margin-bottom: 3rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.26em;
+  }
+
+  .imageFrame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .imageFrame::after {
+    inset: 0.75rem;
+  }
+
+  .title {
+    font-size: clamp(2.25rem, 10vw, 3.7rem);
+    line-height: 1.44;
+    letter-spacing: 0.08em;
+  }
+
+  .lead {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    line-height: 2.08;
+  }
+
+  .text {
+    font-size: 0.84rem;
+    line-height: 2;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .detailItem,
+  .detailItem + .detailItem {
+    padding: 0;
+    border-left: 0;
+  }
+
+  .detailItem + .detailItem {
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(243, 240, 234, 0.09);
+  }
+}
+@media (max-width: 640px) {
+  .inner {
+    padding: 6.4rem 1.25rem 5.4rem;
+  }
+
+  .kicker {
+    margin-bottom: 2.8rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+  }
+
+  .grid {
+    gap: 3.1rem;
+  }
+
+  .imageFrame {
+    aspect-ratio: 4 / 4.85;
+  }
+
+  .imageFrame::after {
+    inset: 0.72rem;
+  }
+
+  .content {
+    max-width: none;
+  }
+
+  .jaLabel {
+    margin-bottom: 1.25rem;
+    font-size: 0.86rem;
+    letter-spacing: 0.22em;
+  }
+
+  .title {
+    font-size: clamp(2.2rem, 9.6vw, 3.55rem);
+    line-height: 1.44;
+    letter-spacing: 0.075em;
+  }
+
+  .lead {
+    margin-top: 2rem;
+    font-size: 0.94rem;
+    line-height: 2.08;
+    letter-spacing: 0.065em;
+  }
+
+  .text {
+    margin-top: 1.45rem;
+    font-size: 0.83rem;
+    line-height: 2;
+    letter-spacing: 0.052em;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 2.7rem;
+    padding-top: 0;
+    border-top: 1px solid rgba(243, 240, 234, 0.11);
+  }
+
+  .detailItem,
+  .detailItem + .detailItem {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-left: 0;
+  }
+
+  .detailItem + .detailItem {
+    border-top: 1px solid rgba(243, 240, 234, 0.075);
+  }
+
+  .detailItem dt {
+    margin: 0;
+    font-size: 0.55rem;
+    letter-spacing: 0.24em;
+    white-space: nowrap;
+  }
+
+  .detailItem dd {
+    font-size: 1.08rem;
+    letter-spacing: 0.08em;
+    text-align: right;
+  }
+}
